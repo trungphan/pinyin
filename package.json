@@ -1,0 +1,22 @@
+{
+  "name": "pinyin",
+  "version": "1.0.0",
+  "description": "Pinyin utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "type": "module",
+  "exports": {
+    "import": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/trungphan/pinyin"
+  },
+  "author": "Trung Phan",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
+}
