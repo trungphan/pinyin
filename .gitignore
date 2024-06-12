@@ -2,6 +2,8 @@
 .DS_Store
 Thumbs.db
 
+dist
+
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 

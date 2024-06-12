@@ -3,13 +3,23 @@
   "version": "1.0.0",
   "description": "Pinyin utils",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
+    "prepare": "npm run build",
+    "build": "esbuild index.js --bundle --platform=node --outfile=dist/index.cjs",
     "test": "mocha"
   },
   "type": "module",
   "exports": {
-    "import": "./index.js"
+    "import": "./index.js",
+    "require": "./dist/index.cjs"
   },
+  "files": [
+    "dist",
+    "index.d.ts",
+    "index.js",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "github.com/trungphan/pinyin"
@@ -17,6 +27,7 @@
   "author": "Trung Phan",
   "license": "ISC",
   "devDependencies": {
+    "esbuild": "0.21.5",
     "mocha": "^10.4.0"
   }
 }
