@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { convertToPinyin, convertToPinyin1, normalizePinyin1 } from "pinyin";
+import { convertToPinyin, convertToPinyin1, normalizePinyin1, pinyinForPolly } from "pinyin";
 
 const SINGLE_PINYINS = [
     ['ǎ', 'a3'],
@@ -633,5 +633,10 @@ describe('ConvertToPinyin1 then ConvertToPinyin', () => {
     it('should go back to original in most cases', () => {
         assert.equal(convertToPinyin1('āimén\'āihù'), 'ai1men2ai1hu4');
         assert.equal(convertToPinyin(convertToPinyin1('āimén\'āihù')), 'āimén\'āihù')
+    });
+});
+describe('PinyinForPolly', () => {
+    it('should not have dash at the end', () => {
+        assert.equal(pinyinForPolly('zhǔnr'), 'zhunr3');
     });
 });
