@@ -120,6 +120,8 @@ export function convertToPinyin(pinyin1) {
  * characters that are not part of a pinyin. The aim of this method is to
  * produce consistent pinyin for comparison.
  *
+ * Example: 女孩儿: nv3 hai2 r.
+ *
  * @param {string} pinyin 
  * @returns {string}
  */
@@ -141,6 +143,9 @@ export function normalizePinyin1(pinyin) {
  * Converts pinyin to a trimmed lowercase accent-form pinyin, remove all
  * characters that are not part of a pinyin. The aim of this method is to
  * produce consistent pinyin for comparison.
+ * 
+ * Example: 女孩儿: nǚ hái r. The r is separated from hái so that the group of
+ * sounds (nǚ, hái, r) can be matched to the group of characters (女, 孩, 儿).
  *
  * @param {string} pinyin 
  * @returns {string}
