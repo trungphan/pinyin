@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { convertToPinyin, convertToPinyin1, normalizePinyin1, pinyinForPolly } from "pinyin";
+import { compactPinyin, convertToPinyin, convertToPinyin1, normalizePinyin, normalizePinyin1, pinyinForPolly } from "pinyin";
 
 const SINGLE_PINYINS = [
     ['ǎ', 'a3'],
@@ -527,6 +527,7 @@ const SINGLE_PINYINS = [
     ['zǐr', 'zi3r', 'zir3'],
     ['zuǐr', 'zui3r', 'zuir3'],
     ['zuǒr', 'zuo3r', 'zuor3'],
+    ['fur', 'fu5r', 'fur5'],
 ];
 
 const PINYIN_BOUNDARIES = [
@@ -627,6 +628,17 @@ describe('NormalizePinyin1', () => {
         assert.equal(normalizePinyin1('bārgǒu'), 'ba1 r gou3');
         assert.equal(normalizePinyin1('āi ér bù shāng'), 'ai1 er2 bu4 shang1');
         assert.equal(normalizePinyin1('lvr3'), 'lv3 r');
+        assert.equal(normalizePinyin1('fur'), 'fu5 r');
+    });
+});
+describe('NormalizePinyin', () => {
+    it('should handle r', () => {
+        assert.equal(normalizePinyin('fu5 r'), 'fu r');
+    });
+});
+describe('CompactPinyin', () => {
+    it('should handle r', () => {
+        assert.equal(compactPinyin('fu r'), 'fur');
     });
 });
 describe('ConvertToPinyin1 then ConvertToPinyin', () => {
